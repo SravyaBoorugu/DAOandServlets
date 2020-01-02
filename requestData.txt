@@ -1,0 +1,42 @@
+package servletpractice;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/RequestData")
+public class RequestData extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	PrintWriter out = response.getWriter();
+	String name = request.getParameter("empname");
+	String mail = request.getParameter("email");
+	String date = request.getParameter("date");
+	//String job = request.getParameter("job");
+	String jobs[] = request.getParameterValues("job");
+	/* String tester = request.getParameter("tester");
+	String scrumMaster = request.getParameter("scrumMaster"); */
+	int sal = Integer.parseInt(request.getParameter("sal"));
+	out.println("Employee name = "+ name+"<br>");
+	out.println("Mail ID = "+mail+"<br>");
+	out.println("date = "+date+"<br>");
+	//out.println("job  = "+job+"<br>");
+	 for(String value : jobs)
+     {
+     out.println("jobs:"+value+"<br>");
+     }  
+	
+    out.println("salary = "+sal);
+	
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	doGet(request, response);
+	}
+
+}

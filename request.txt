@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+      <form action = "RequestData" method = "get">
+      Enter name : <input type = "text" name = "empname"><br>
+      Email ID : <input type = "text"  name = "email"><br>
+      Date : <input type = "text" name = "date"><br>
+      Job  : <input type = "checkbox" name = "job" value = "developer"> Developer
+             <input type = "checkbox" name = "job" value = "tester"> Tester
+             <input type = "checkbox" name = "job" value = "scrumMaster"> Scrum Master<br>
+      Salary : <input type = "text" name = "sal">
+       <input type = "submit">
+      </form> 
+</body>
+</html>
